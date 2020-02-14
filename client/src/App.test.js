@@ -29,3 +29,7 @@ describe('Dark Mode', () => {
   })
 })
 
+describe('Easy Math', () => {
+  expect(5).toBe(5);
+})
+

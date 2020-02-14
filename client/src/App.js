@@ -38,7 +38,7 @@ function App() {
 
     return (
       <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-        <button data-testid='darkmode' onClick={toggleDarkMode}>{darkMode ? 'Light' : 'Dark'} Mode</button>
+        <button onClick={toggleDarkMode}>{darkMode ? 'Light' : 'Dark'} Mode</button>
         <PlayerList players={players} />
       </div>
     );
