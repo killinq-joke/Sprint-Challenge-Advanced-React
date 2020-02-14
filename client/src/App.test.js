@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as rtl from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 import App from './App';
 
 it('renders without crashing', () => {
@@ -8,6 +8,16 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+// it('render correctly', () => {
+//   const = render
+// })
+
+describe('sanity test', () => {
+  it('5 = 5', () => {
+    expect(5).toBe(5);
+  })
+
+})
 
 // describe('App', () =>  {
 //   const app = rtl.render(<App />)
@@ -17,19 +27,17 @@ it('renders without crashing', () => {
 // })
 
 describe('Dark Mode', () => {
-  const wrapper = rtl.render(<App />)
+  const wrapper = render(<App />)
   const darkMode = wrapper.queryByText(/dark mode/i)
   it('exists', () => {
-    expect(darkMode).toBeInTheDocument();
+    expect(darkMode).toBeTruthy();
   })
   it('changes to light mode', () => {
-    darkMode.rtl.fireEvent.click(darkmode);
+    fireEvent.click(darkMode);
     const lightMode = wrapper.queryByText(/light mode/i)
-    expect(lightMode).toBeInTheDocument();
+    expect(lightMode).toBeTruthy();
   })
 })
 
-describe('Easy Math', () => {
-  expect(5).toBe(5);
-})
+
 
