@@ -13,7 +13,7 @@ it('renders without crashing', () => {
 // })
 
 describe('sanity test', () => {
-  it('5 = 5', () => {
+  it('5 equals 5', () => {
     expect(5).toBe(5);
   })
 

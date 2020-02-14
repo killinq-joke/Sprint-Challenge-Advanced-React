@@ -13,7 +13,7 @@ export const useLocalStorage = (key, initialValue) => {
     return [storedValue, setValue];
   };
 
-export const useSwitch = () => {
+export const useSwitch = (key, initialValue) => {
     const [mode, setMode] = useLocalStorage('Switch', false)
     const toggle = e => {
         setMode(!mode)
