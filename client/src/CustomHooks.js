@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const useDarkMode = () => {
-    const [darkMode, setDarkMode] = useState(false)
-    const toggleDarkMode = e => {
-        setDarkMode(!darkmode)
+export const useSwitch = () => {
+    const [mode, setMode] = useState(false)
+    const toggle = e => {
+        setMode(!mode)
     }
-    return [darkMode, toggleDarkMode];
+    return [mode, toggle];
 }
